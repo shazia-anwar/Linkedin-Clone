@@ -1,0 +1,89 @@
+POST http://localhost:9080/register HTTP/1.1
+content-Type: application/json
+
+/*
+# {
+#     "username": "testuser100",
+#     "password": "testuser100",
+#     "email": "testuser100@hello.com",
+#     "name": "Test User"
+# }*/
+# /* {
+#   "username": "testuser200",
+#   "email": "testuser200@hello.com",
+#   "password": "testuser200",
+#   "name": "Test User 2"
+# }*/
+
+{
+    "username": "shazia-anwar",
+    "email": "shazia25@gmail.com",
+    "password": "1225",
+    "name": "Shazia"
+}
+{
+    "username": "shaz",
+    "email": "shaz25@gmail.com",
+    "password": "1225",
+    "name": "Shaz"
+}
+
+
+###
+POST http://localhost:9080/login HTTP/1.1
+content-Type: application/json
+
+# {
+#     "email": "testuser100@hello.com",
+#     "password": "testuser100"
+# }
+# /* {
+#   "email": "testuser200@hello.com",
+#   "password": "testuser200"
+# }*/
+
+{
+    "email": "shazia25@gmail.com",
+    "password": "1225",
+}
+
+###
+GET http://localhost:9080/get_user_and_profile
+content-Type: application/json
+
+# {
+#     "token": "01d1a0f9bf1cfbffa5ec1ef301be51e3b1e5806dd75f331e450707511d6f4632"
+# }
+# /* "token": "8521ee32113e1a4b8ab7a62736a48c713a64b589229dacf2fd3bef450a274fd9"*/
+
+{
+    "token": "d2f3b12457f6e4654a48f9d01e7192d184419030f39f1916651c66fea922f2e2"
+}
+
+###
+POST http://localhost:9080/update_profile_data
+content-Type: application/json
+
+{
+    "token": "01d1a0f9bf1cfbffa5ec1ef301be51e3b1e5806dd75f331e450707511d6f4632",
+    "bio"
+    "currentPost": "Graphic Designer",
+    "pastWork": [
+        {
+            "company": "Zenoids",
+            "position": "Graphic Designer",
+            "years": "2+"
+        }
+    ],
+    "education": [
+        {
+            "school": "AGHS",
+            "degree": "B.Tech",
+            "fieldOfStudy": "2013-2017"
+        }
+    ]
+}
+/* "token": "8521ee32113e1a4b8ab7a62736a48c713a64b589229dacf2fd3bef450a274fd9" */
+
+###
+GET http://localhost:9080/user/get_all_users
