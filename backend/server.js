@@ -19,7 +19,7 @@ app.use(express.static("uploads"));
 
 
 const start = async () => {
-    const connectDB = await mongoose.connect("mongodb+srv://shazia:shaiz123@linkedinclone.fkm40cq.mongodb.net/?retryWrites=true&w=majority&appName=LinkedinClone");
+    const connectDB = await mongoose.connect("mongodb+srv://           @linkedinclone.fkm40cq.mongodb.net/?retryWrites=true&w=majority&appName=LinkedinClone");
     
     app.listen(9080, () => {
         console.log("Server is running on port 9080");
