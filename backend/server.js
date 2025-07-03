@@ -19,11 +19,19 @@ app.use(express.static("uploads"));
 
 
 const start = async () => {
-    const connectDB = await mongoose.connect("mongodb+srv://           @linkedinclone.fkm40cq.mongodb.net/?retryWrites=true&w=majority&appName=LinkedinClone");
-    
-    app.listen(9080, () => {
-        console.log("Server is running on port 9080");
-    });
+    try {
+        console.log("MONGO_URI loaded:", !!process.env.MONGO_URI);  // just to confirm .env loaded
+        
+        await mongoose.connect(process.env.MONGO_URI);
+        
+        console.log("MongoDB connected");
+        
+        app.listen(9080, () => {
+            console.log("Server is running on port 9080");
+        });
+    } catch (error) {
+        console.error("MongoDB connection error:", error);
+    }
 };
 
 start();
